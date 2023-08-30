@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book live music</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link href= "https://getbootstrap.com/docs/3.4/javascript/">
+</head>
+
+<body>
+
+  <!-- nav in header: -->
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light" id="navbar-top">
+    <a class="navbar-brand" href="#signUpForMusicians">Musicians - Sign Up!</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Join Bands</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" href="#">Log In</a>
+          <form class="dropdown-menu-sign dropdown-menu p-4" id="signInFormMusic">
+            <div class="mb-3">
+              <label for="exampleDropdownFormEmail2" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleDropdownFormEmailMusic" placeholder="email@example.com">
+            </div>
+            <div class="mb-3">
+              <label for="exampleDropdownFormPassword2" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleDropdownFormPasswordMusic2" placeholder="Password">
+            </div>
+            <div class="mb-3">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                <label class="form-check-label" for="dropdownCheck2">
+                  Remember me
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-lg btn-primary">Sign in</button>
+          </form>
+        </li>
+      </ul>
+      <span class="navbar-text">
+        Musician? you can join several bands!
+      </span>
+    </div>
+  </nav>
+  <!-- ///////////////////// -->
+
+
+  <!-- whole container under nav in body: -->
+  <div class="container-fluid column one">
+
+    <!-- whole middle part: -->
+    <div class="container-fluid row" id="middle-part">
+      
+      <!-- Nav-Bar left: -->
+      <div class="col-md-3">
+        <div class="btn-group-vertical d-grid gap-2">
+          
+          <!-- reset-button: -->
+          <div class="row">
+            <button type="button" class="btn btn-lg btn-dark" id="reset2">Reset</button>
+          </div>
+
+          <!-- Sign-Up-Button (fan): -->
+          <div class="dropdown row">
+            <button type="button" id="signUpButton" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+              Sign Up!
+            </button>
+            <form action="/nowhere" class="dropdown-menu dropdown-menu-sign p-4" id="registerForm">
+              <div class="mb-3">
+                <label for="validationDefault01" class="form-label">First name</label>
+                <input type="text" class="form-control" id="validationDefault01" value="Mark" required>
+              </div>
+              <div class="mb-3">
+                <label for="validationDefault02" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="validationDefault02" value="Otto" required>
+              </div>
+              <div class="mb-3">
+                <label for="validationDefaultUsername" class="form-label">Username</label>
+                <div class="input-group">
+                  <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                  <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
+                </div>
+              </div>
+
+              <!-- mail: -->
+              <div class="mb-3">
+                <label for="exampleDropdownFormEmail4" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleDropdownFormEmail4" placeholder="email@example.com">
+              </div>
+
+              <!-- Password: -->
+              <div class="mb-3">
+                <label for="psw" class="form-label">Password</label>
+                <input type="password" class="form-control item" id="psw" placeholder="Type your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+              </div>
+              
+              <div class="mb-3">
+                <label for="validationDefault04" class="form-label">City</label>
+                <select class="form-select" id="validationDefault04" required>
+                  <option selected disabled value="">Choose...</option>
+                  <option>London</option>
+                  <option>Krakow</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                  <label class="form-check-label" for="invalidCheck2">
+                    Agree to terms and conditions
+                  </label>
+                </div>
+              </div>
+              <div class="mb-3">
+                <button class="btn btn-lg btn-primary" id="submitButton" type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Sign-In-Button (fan): -->
+          <div class="dropdown row">
+            <button type="button" id="signInButton" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+              Sign In
+            </button>
+            <form class="dropdown-menu-sign dropdown-menu p-4" id="signInForm">
+              <div class="mb-3">
+                <label for="exampleDropdownFormEmail2" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+              </div>
+              <div class="mb-3">
+                <label for="exampleDropdownFormPassword2" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+              </div>
+              <div class="mb-3">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                  <label class="form-check-label" for="dropdownCheck2">
+                    Remember me
+                  </label>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-lg btn-primary">Sign in</button>
+            </form>
+          </div>
+
+          <!-- Concerts-Button: -->
+          <div class="row">
+            <!-- Button trigger modal -->
+            <button id="concert-button" class="btn btn-lg btn-primary" type="button" data-toggle="modal" data-target="#exampleModalCenter">Concerts!</button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Concert: Artist - Date - City</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div id="concert-container">
+                      <ul id="show-concerts"><ul>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-lg btn-secondary" data-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Message-Button: -->
+          <div class="row">
+            <button type="button" id="message-button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Message</button>
+
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Recipient:</label>
+                          <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                          <label for="message-text" class="col-form-label">Message:</label>
+                          <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-lg btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-lg btn-primary">Send message</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div> 
+      </div>
+
+      <div class="col-md-3 image">
+        <a href="./mixkit-beautiful-dream-493.mp3" aria-label="Beautiful Dream by Diego Nava https://mixkit.co/free-stock-music/tag/guitar/"><img src="./guitar-icon-png-weiss.png" id="guitar"></a>
+      </div>
+
+      <!-- Book Live Music-Column: -->
+      <div class="col-md-6">
+        <div class="container-fluid column two" id="container">
+        
+          <div class="title glow">
+            <p class="words">Book</p>&nbsp
+            <p class="words">Live</p>&nbsp
+            <p class="words">Music</p>
+          </div>
+
+          <!-- Buttons: -->
+          <div class="d-grid gap-2">
+
+            <!-- Buttons first row: -->
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+              
+              <!-- City-Button: -->
+            <div class="btn-group" role="group">
+              <select class="form-select" style="font-size: larger;" id="cityBook" required>
+                  <option selected disabled value="default">City</option>
+                  <option>Krakow</option>
+                  <option>London</option>
+              </select>
+          </div>
+
+          <!-- Bandsize-Button: -->
+          <div class="btn-group" role="group">
+              <select class="form-select" style="font-size: larger;" id="sizeBook" required>
+                  <option selected disabled value="default">Bandsize</option>
+                  <option>small</option>
+                  <option>medium</option>
+                  <option>large</option>
+              </select>
+          </div>
+      
+          <!-- Go-Button: -->
+          <div class="btn-group" role="group">
+              <button id="go2" type="button" class="btn btn-lg btn-dark">Go!</button>
+          </div>  
+            </div>
+            
+            <!-- Button second row: -->
+            <button type="button" class="btn btn-lg btn-dark" id="club">... or go to the next jazz club</button>     
+          
+            <!-- Search-field: -->
+            <form id="form">
+              <div class="input-group mb-3">
+                <input class="search form-control" type="text" id="input-search" placeholder="Search for Musicians [enter]" name="search" autocomplete="off" />
+              </div>
+            </form>
+          </div>   
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <p style="color: #7478a7;">Photo by <a href="https://unsplash.com/@nikolalsvk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nikola Đuza</a> on <a href="https://unsplash.com/photos/MX5av6rjdvk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      </p>
+    </div>
+
+    <!-- Text and Icons: -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis provident ab sapiente unde at, sequi, repellendus pariatur nostrum atque sunt laborum quae tenetur eligendi tempora, itaque voluptatibus voluptatum quidem necessitatibus?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque accusantium dolorem at ducimus repellendus ad cumque porro. Natus facere eum, earum nam at odit optio deserunt quasi. Maiores, dicta quas!
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 mid"></div>
+        <div class="col-lg-4 mid icon">
+          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#fff" />
+            <text x="50%" y="50%" fill="#777" dy=".3em">[music.instr.icon]</text>
+          </svg>
+        </div>
+        <div class="col-lg-4 mid"></div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis provident ab sapiente unde at, sequi, repellendus pariatur nostrum atque sunt laborum quae tenetur eligendi tempora, itaque voluptatibus voluptatum quidem necessitatibus?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque accusantium dolorem at ducimus repellendus ad cumque porro. Natus facere eum, earum nam at odit optio deserunt quasi. Maiores, dicta quas!
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 mid"></div>
+        <div class="col-lg-4 mid icon">
+          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#fff" />
+            <text x="50%" y="50%" fill="#777" dy=".3em">[music.instr.icon]</text>
+          </svg>
+        </div>
+        <div class="col-lg-4 mid"></div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis provident ab sapiente unde at, sequi, repellendus pariatur nostrum atque sunt laborum quae tenetur eligendi tempora, itaque voluptatibus voluptatum quidem necessitatibus?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque accusantium dolorem at ducimus repellendus ad cumque porro. Natus facere eum, earum nam at odit optio deserunt quasi. Maiores, dicta quas!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Musician Sign-Up: -->
+    <div class="col-lg-12">
+      <div id="signUpForMusicians"><h3>Musician? Sign Up!</h3></div>
+      <form class="row g-3" id="registerForm2">
+        <div class="col-md-4 col-sm-6">
+          <label for="validationDefault01Music" class="form-label">First name</label>
+          <input type="text" class="form-control" id="validationDefault01Music" value="Mark" required>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <label for="validationDefault02Music" class="form-label">Last name</label>
+          <input type="text" class="form-control" id="validationDefault02Music" value="Otto" required>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <label for="validationDefaultUsernameMusic" class="form-label">Username</label>
+          <div class="input-group">
+            <span class="input-group-text" id="inputGroupPrepend2">@</span>
+            <input type="text" class="form-control" id="validationDefaultUsernameMusic" aria-describedby="inputGroupPrepend2" required>
+          </div>
+        </div>
+
+        <!-- mail: -->
+        <div class="col-md-4 col-sm-6">
+          <label for="exampleDropdownFormEmailMusic" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleDropdownFormEmailMusic" placeholder="email@example.com">
+        </div>
+
+        <!-- Password: -->
+        <div class="col-md-4 col-sm-6">
+          <label for="pswMusic" class="form-label">Password</label>
+          <input type="password" class="form-control item" id="pswMusic" placeholder="Type your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+        </div>
+        
+        <!-- City: -->
+        <div class="col-md-4 col-sm-6">
+          <label for="validationDefault04Music" class="form-label">City</label>
+          <select class="form-select" id="validationDefault04Music" required>
+            <option selected disabled value="">Choose...</option>
+            <option>London</option>
+            <option>Krakow</option>
+          </select>
+        </div>
+
+        <!-- Instrument: -->
+        <div class="col-md-4 col-sm-6">
+          <label for="instrument" class="form-label">Instrument</label>
+          <select class="form-select" id="instrument" required>
+            <option selected disabled value="">Choose...</option>
+            <option>Guitar</option>
+            <option>Piano</option>
+            <option>Bass</option>
+            <option>Percussion</option>
+            <option>Sax</option>
+            <option>Trumpet</option>
+            <option>Trombone</option>
+            <option>Clarinet</option>
+          </select>
+        </div>
+
+        <!-- Bandsize select: -->
+        <div class="col-md-4 col-sm-6">
+          <div class="dropdown">
+            <label for="bandSizeButton" class="form-label">Bandsize (multiple choise possible)</label>
+            <button class="btn btn-secondary dropdown-toggle form-control" type="button" id="bandSizeButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Choose Bandsize
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item">
+                <div class="form-check">
+                  <input name="checkboxcheck" class="form-check-input" type="checkbox" value="Single Musician" id="one">
+                  <label class="form-check-label" for="one">
+                    Single Musician
+                  </label>
+                </div>
+              </a>
+              <a class="dropdown-item">
+                <div class="form-check">
+                  <input name="checkboxcheck" class="form-check-input" type="checkbox" value="Duo" id="two">
+                  <label class="form-check-label" for="two">
+                    Duo
+                  </label>
+                </div>
+              </a>
+              <a class="dropdown-item">
+                <div class="form-check">
+                  <input name="checkboxcheck" class="form-check-input" type="checkbox" value="Trio" id="three">
+                  <label class="form-check-label" for="three">
+                    Trio
+                  </label>
+                </div>
+              </a>
+              <a class="dropdown-item">
+                <div class="form-check">
+                  <input name="checkboxcheck" class="form-check-input" type="checkbox" value="Quartet" id="four">
+                  <label class="form-check-label" for="four">
+                    Quartet
+                  </label>
+                </div>
+              </a>
+              <a class="dropdown-item">
+                <div class="form-check">
+                  <input name="checkboxcheck" class="form-check-input" type="checkbox" value="small Jazz Combo" id="five">
+                  <label class="form-check-label" for="five">
+                    small Jazz Combo
+                  </label>
+                </div>
+              </a>
+              <a class="dropdown-item">
+                <div class="form-check">
+                  <input name="checkboxcheck" class="form-check-input" type="checkbox" value="medium Jazz Combo several Horns" id="six">
+                  <label class="form-check-label" for="six">
+                    medium Jazz Combo several Horns
+                  </label>
+                </div>
+              </a>
+              <a class="dropdown-item">
+                <div class="form-check">
+                  <input name="checkboxcheck" class="form-check-input" type="checkbox" value="Big Band" id="seven">
+                  <label class="form-check-label" for="seven">
+                    Big Band
+                  </label>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+            <label class="form-check-label" for="invalidCheck2">
+              Agree to terms and conditions
+            </label>
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+      </form>
+    </div>
+    
+
+    <!-- 3 Cards: -->
+    <div class="col-lg-12">
+      <div class="row" style="margin-bottom: 5%;">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100">
+              <!-- <img src="..." class="card-img-top" alt="..."> -->
+              <div class="card-body">
+                <h5 class="card-title">Locations for rent</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <!-- <img src="..." class="card-img-top" alt="..."> -->
+              <div class="card-body">
+                <h5 class="card-title">Music Equipment for rent/ Technicians to hire</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <!-- <img src="..." class="card-img-top" alt="..."> -->
+              <div class="card-body">
+                <h5 class="card-title">Catering/ Staff</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer: -->
+    <div class="container-fluid">
+      <div class="row">
+        <footer class="bg-light text-center">
+          <!-- Grid container -->
+          <div class="container p-4 pb-0">
+            <!-- Section: Form -->
+            <section class="">
+              <form action="">
+                <!--Grid row-->
+                <div class="row d-flex justify-content-center">
+                  <!--Grid column-->
+                  <div class="col-auto">
+                    <p class="pt-2">
+                      <strong>Sign up for our newsletter</strong>
+                    </p>
+                  </div>
+                  <!--Grid column-->
+        
+                  <!--Grid column-->
+                  <div class="col-md-5 col-12">
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                      <input type="email" id="form5Example27" class="form-control" />
+                      <label class="form-label" for="form5Example27">Email address</label>
+                    </div>
+                  </div>
+                  <!--Grid column-->
+        
+                  <!--Grid column-->
+                  <div class="col-auto">
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary mb-4">
+                      Subscribe
+                    </button>
+                  </div>
+                  <!--Grid column-->
+                </div>
+                <!--Grid row-->
+              </form>
+            </section>
+            <!-- Section: Form -->
+          </div>
+          <!-- Grid container -->
+        
+          <!-- Copyright -->
+          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Copyright:
+            <a class="text-dark" href="./index.html">booklivemusic.com</a>
+          </div>
+          <!-- Copyright -->
+        </footer>
+      </div>
+    </div>   
+  </div>
+  
+  <script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href= "https://getbootstrap.com/docs/3.4/javascript/">
+</body>
+</html>
+
+

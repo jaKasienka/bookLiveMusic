@@ -1,0 +1,195 @@
+body {
+    background-color: black;
+}
+
+.btn {
+    color: black !important;
+    background-color: white !important;
+    border-color: #3C65A2;
+}
+
+.btn:hover, .btn:active {
+    color: white  !important;
+    background-color: #3C65A2 !important;
+    border-color: #343a40 !important;
+}
+
+.btn-group {
+    color: black;
+    background-color: none;
+    @media (max-width: 400px) {
+        flex-direction: column;
+    }
+}
+
+.btn-lg {
+    color: black;
+    background-color: white;
+    @media (max-width: 400px) {
+        flex-direction: column;
+    }
+}
+
+#message-button {
+    padding-right: 15px;
+    margin-bottom: 20%;
+}
+
+#bandSizeButton {
+    text-align: start;
+}
+
+#button-group-middle{
+    margin-top: 45px;
+    @media (max-width: 300px){
+        margin-top: 58px;
+    }
+}
+
+.col-md-3 {
+    margin: auto;
+    @media (max-width: 768px){
+        margin-top: 45px;
+    }
+}
+
+.col-md-3.image {
+    margin: auto;
+    padding: 0%;
+}
+
+.dropdown-menu-sign{
+    min-width: 400px;
+}
+
+#middle-part {
+    margin-top: 8%;
+    min-height: 15vw;
+}
+
+#guitar {
+    margin: auto;
+    display: block;
+    width: 70%;
+    @media (max-width: 768px) {
+        width: 30%;
+    }   
+}
+
+.col-md-6 {
+    background-color: transparent;
+    padding-bottom: 10%;
+}
+
+.container-fluid.row {
+    background-image: url('./image_live_music.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+}
+
+.container-fluid.column.one {
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    flex-direction: column;
+    /* x-Achse: */
+    justify-content: center;
+    /* y-Achse: */
+    align-items: center;
+}
+
+.container-fluid.column.two {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    /* x-Achse: */
+    justify-content: center;
+    /* y-Achse: */
+    align-items: center;
+}
+
+.title {
+    padding: 10%;
+    margin-left: 4px; 
+    margin-right: 4px; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 4vw; /* Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm. */
+    font-weight: bold;
+    padding: 20px 30px 50px 30px;
+    /* top, right bottom, left */
+    line-height: 0;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    /* x-Achse: */
+    justify-content: center;
+    /* y-Achse: */
+    align-items: center;   
+}
+
+.title.glow {
+    padding: 10%;
+    margin-left: 4px; 
+    margin-right: 4px; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 5vw; /* Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm. */
+    font-weight: bold;
+    padding: 20px 30px 50px 30px;
+    /* top, right bottom, left */
+    line-height: 0;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    /* x-Achse: */
+    justify-content: center;
+    /* y-Achse: */
+    align-items: center;
+}
+
+.glow {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff, 0 0 80px #fff;
+    }
+  }
+
+#input-search {
+    background-color: white;
+    opacity: 50%;
+    backdrop-filter: blur(5px);
+    height: 45px;
+    border-color: white;
+    box-shadow: 0 0 15px white;
+}
+
+.col-lg-12 {
+    margin: auto;
+    padding: 7%;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px; /* Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm. */
+    font-weight: lighter;
+}
+
+.col-lg-4.mid.icon{
+    margin: auto;
+    padding: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#bands {
+    margin: auto;
+}

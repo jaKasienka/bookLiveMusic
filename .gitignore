@@ -1,0 +1,6 @@
+*.log
+temp/
+bin/
+# or
+*/bin/*
+.idea/workspace.xml
