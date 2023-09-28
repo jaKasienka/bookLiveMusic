@@ -5,7 +5,8 @@ body {
 .btn {
     color: black !important;
     background-color: white !important;
-    border-color: #3C65A2;
+    border-color: #ffffff;
+    box-shadow: 0 0 10px white;
 }
 
 .btn:hover, .btn:active {
@@ -15,6 +16,7 @@ body {
 }
 
 .btn-group {
+    /* box-shadow: 0 0 15px white; */
     color: black;
     background-color: none;
     @media (max-width: 400px) {
@@ -69,11 +71,16 @@ body {
 
 #guitar {
     margin: auto;
-    display: block;
-    width: 70%;
+    display: flex;
+    width: 60%;
+    filter: drop-shadow(0 0 0.75rem rgb(251, 249, 242));
+    /* backdrop-filter: blur(1px) saturate(1);
+    padding: 20px;
+    margin: -20px; */
+
     @media (max-width: 768px) {
         width: 30%;
-    }   
+    }  
 }
 
 .col-md-6 {
@@ -156,21 +163,34 @@ body {
   }
   @keyframes glow {
     from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff;
+      text-shadow: 0 0 0px #fff, 0 0 0px #fff, 0 0 5px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 10px #fff;
     }
     to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff, 0 0 80px #fff;
+      text-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 20px #fff;
     }
   }
+
+.simple-glow {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 5px #fff, 0 0 5px #fff;
+}
 
 #input-search {
     background-color: white;
     opacity: 50%;
     backdrop-filter: blur(5px);
     height: 45px;
-    border-color: white;
-    box-shadow: 0 0 15px white;
+    /* border-color: white; */
+    box-shadow: 0 0 10px white;
 }
+
+.form-select, .form-control {
+    /* border-color: white; */
+    box-shadow: 0 0 10px white;
+}
+
 
 .col-lg-12 {
     margin: auto;
@@ -192,4 +212,9 @@ body {
 
 #bands {
     margin: auto;
+}
+
+#subscribe-mail, #submitButton, #sign-in-button {
+    background-color: #3C65A2  !important;
+    color: white  !important;
 }
